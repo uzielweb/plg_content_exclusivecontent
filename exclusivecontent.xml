@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" group="content" method="upgrade">
+	<name>PLG_CONTENT_EXCLUSIVECONTENT</name>
+	<author>Uziel via Ponto Mega</author>
+	<creationDate>2026-08</creationDate>
+	<copyright>Copyright (C) 2026</copyright>
+	<license>GNU General Public License version 2 or later</license>
+	<authorEmail>contato@pontomega.com.br</authorEmail>
+	<authorUrl>https://pontomega.com.br</authorUrl>
+	<version>1.0.0</version>
+	<description>PLG_CONTENT_EXCLUSIVECONTENT_XML_DESCRIPTION</description>
+
+	<namespace path="src">Joomla\Plugin\Content\Exclusivecontent</namespace>
+
+	<files>
+		<folder plugin="exclusivecontent">services</folder>
+		<folder>forms</folder>
+		<folder>src</folder>
+
+		<filename plugin="exclusivecontent">exclusivecontent.xml</filename>
+	</files>
+	<languages>
+		<language tag="en-GB" client="administrator">language/en-GB/plg_content_exclusivecontent.ini</language>
+		<language tag="en-GB" client="administrator">language/en-GB/plg_content_exclusivecontent.sys.ini</language>
+		<language tag="pt-BR" client="administrator">language/pt-BR/plg_content_exclusivecontent.ini</language>
+		<language tag="pt-BR" client="administrator">language/pt-BR/plg_content_exclusivecontent.sys.ini</language>
+	</languages>
+
+	<media destination="plg_content_exclusivecontent" folder="media">
+		<folder>css</folder>
+		<folder>js</folder>
+	</media>
+
+
+
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+					name="enabled"
+					type="radio"
+					label="PLG_CONTENT_EXCLUSIVECONTENT_FIELD_ENABLED_LABEL"
+					description="PLG_CONTENT_EXCLUSIVECONTENT_FIELD_ENABLED_DESC"
+					default="1"
+					layout="joomla.form.field.radio.switcher"
+					>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field
+					name="restrict_mode"
+					type="list"
+					label="PLG_CONTENT_EXCLUSIVECONTENT_FIELD_RESTRICT_MODE_LABEL"
+					description="PLG_CONTENT_EXCLUSIVECONTENT_FIELD_RESTRICT_MODE_DESC"
+					default="guest"
+					>
+					<option value="guest">PLG_CONTENT_EXCLUSIVECONTENT_OPTION_GUEST</option>
+					<option value="groups">PLG_CONTENT_EXCLUSIVECONTENT_OPTION_GROUPS</option>
+				</field>
+
+				<field
+					name="allowed_groups"
+					type="usergrouplist"
+					label="PLG_CONTENT_EXCLUSIVECONTENT_FIELD_ALLOWED_GROUPS_LABEL"
+					description="PLG_CONTENT_EXCLUSIVECONTENT_FIELD_ALLOWED_GROUPS_DESC"
+					multiple="true"
+					layout="joomla.form.field.list-fancy-select"
+					showon="restrict_mode:groups"
+				/>
+
+				<field
+					name="message_title"
+					type="text"
+					label="PLG_CONTENT_EXCLUSIVECONTENT_FIELD_MESSAGE_TITLE_LABEL"
+					description="PLG_CONTENT_EXCLUSIVECONTENT_FIELD_MESSAGE_TITLE_DESC"
+					default="PLG_CONTENT_EXCLUSIVECONTENT_MESSAGE_TITLE_DEFAULT"
+					filter="string"
+				/>
+
+				<field
+					name="message_subtitle"
+					type="text"
+					label="PLG_CONTENT_EXCLUSIVECONTENT_FIELD_MESSAGE_SUBTITLE_LABEL"
+					description="PLG_CONTENT_EXCLUSIVECONTENT_FIELD_MESSAGE_SUBTITLE_DESC"
+					default="PLG_CONTENT_EXCLUSIVECONTENT_MESSAGE_SUBTITLE_DEFAULT"
+					filter="string"
+				/>
+
+				<field
+					name="show_register_link"
+					type="radio"
+					label="PLG_CONTENT_EXCLUSIVECONTENT_FIELD_SHOW_REGISTER_LABEL"
+					default="1"
+					layout="joomla.form.field.radio.switcher"
+					>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field
+					name="register_url"
+					type="text"
+					label="PLG_CONTENT_EXCLUSIVECONTENT_FIELD_REGISTER_URL_LABEL"
+					description="PLG_CONTENT_EXCLUSIVECONTENT_FIELD_REGISTER_URL_DESC"
+					default=""
+					filter="string"
+					showon="show_register_link:1"
+				/>
+
+				<field
+					name="register_text"
+					type="text"
+					label="PLG_CONTENT_EXCLUSIVECONTENT_FIELD_REGISTER_TEXT_LABEL"
+					default="PLG_CONTENT_EXCLUSIVECONTENT_REGISTER_TEXT_DEFAULT"
+					filter="string"
+					showon="show_register_link:1"
+				/>
+
+				<field
+					name="register_link_text"
+					type="text"
+					label="PLG_CONTENT_EXCLUSIVECONTENT_FIELD_REGISTER_LINK_TEXT_LABEL"
+					default="PLG_CONTENT_EXCLUSIVECONTENT_REGISTER_LINK_TEXT_DEFAULT"
+					filter="string"
+					showon="show_register_link:1"
+				/>
+
+				<field
+					name="show_recovery_links"
+					type="radio"
+					label="PLG_CONTENT_EXCLUSIVECONTENT_FIELD_SHOW_RECOVERY_LABEL"
+					default="1"
+					layout="joomla.form.field.radio.switcher"
+					>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field
+					name="teaser_mode"
+					type="list"
+					label="PLG_CONTENT_EXCLUSIVECONTENT_FIELD_TEASER_MODE_LABEL"
+					description="PLG_CONTENT_EXCLUSIVECONTENT_FIELD_TEASER_MODE_DESC"
+					default="introtext"
+					>
+					<option value="introtext">PLG_CONTENT_EXCLUSIVECONTENT_OPTION_INTROTEXT</option>
+					<option value="chars">PLG_CONTENT_EXCLUSIVECONTENT_OPTION_CHARS</option>
+				</field>
+
+				<field
+					name="teaser_chars"
+					type="number"
+					label="PLG_CONTENT_EXCLUSIVECONTENT_FIELD_TEASER_CHARS_LABEL"
+					description="PLG_CONTENT_EXCLUSIVECONTENT_FIELD_TEASER_CHARS_DESC"
+					default="400"
+					min="100"
+					max="2000"
+					showon="teaser_mode:chars"
+				/>
+
+				<field
+					name="background_style"
+					type="list"
+					label="PLG_CONTENT_EXCLUSIVECONTENT_FIELD_BACKGROUND_STYLE_LABEL"
+					description="PLG_CONTENT_EXCLUSIVECONTENT_FIELD_BACKGROUND_STYLE_DESC"
+					default="clean"
+					>
+					<option value="clean">PLG_CONTENT_EXCLUSIVECONTENT_OPTION_CLEAN</option>
+					<option value="solid">PLG_CONTENT_EXCLUSIVECONTENT_OPTION_SOLID</option>
+				</field>
+
+				<field
+					name="background_color"
+					type="color"
+					label="PLG_CONTENT_EXCLUSIVECONTENT_FIELD_BACKGROUND_COLOR_LABEL"
+					description="PLG_CONTENT_EXCLUSIVECONTENT_FIELD_BACKGROUND_COLOR_DESC"
+					default="#f8f9fa"
+					showon="background_style:solid"
+				/>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

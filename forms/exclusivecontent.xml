@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fields name="attribs">
+		<fieldset name="exclusivecontent" label="PLG_CONTENT_EXCLUSIVECONTENT_FIELDSET_LABEL">
+			<field
+				name="exclusive_content"
+				type="radio"
+				label="PLG_CONTENT_EXCLUSIVECONTENT_FIELD_ARTICLE_LABEL"
+				description="PLG_CONTENT_EXCLUSIVECONTENT_FIELD_ARTICLE_DESC"
+				default="0"
+				class="btn-group"
+				layout="joomla.form.field.radio.switcher"
+				>
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+		</fieldset>
+	</fields>
+</form>
