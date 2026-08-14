@@ -181,4 +181,8 @@
 			</fieldset>
 		</fields>
 	</config>
+	<updateservers>
+		<server type="extension" priority="1" name="Exclusive Content Plugin">https://raw.githubusercontent.com/uzielweb/plg_content_exclusivecontent/main/updates.xml</server>
+	</updateservers>
 </extension>
+
