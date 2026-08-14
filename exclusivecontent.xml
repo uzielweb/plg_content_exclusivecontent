@@ -7,7 +7,7 @@
 	<license>GNU General Public License version 2 or later</license>
 	<authorEmail>contato@pontomega.com.br</authorEmail>
 	<authorUrl>https://pontomega.com.br</authorUrl>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
 	<description>PLG_CONTENT_EXCLUSIVECONTENT_XML_DESCRIPTION</description>
 
 	<namespace path="src">Joomla\Plugin\Content\Exclusivecontent</namespace>
@@ -182,7 +182,8 @@
 		</fields>
 	</config>
 	<updateservers>
-		<server type="extension" priority="1" name="Exclusive Content Plugin">https://raw.githubusercontent.com/uzielweb/plg_content_exclusivecontent/main/updates.xml</server>
+		<server type="extension" priority="1" name="Exclusive Content - Joomla Content Plugin">https://raw.githubusercontent.com/uzielweb/plg_content_exclusivecontent/main/updates.xml</server>
 	</updateservers>
 </extension>
+
 
