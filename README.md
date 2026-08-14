@@ -1,4 +1,4 @@
-﻿# Exclusive Content Plugin for Joomla
+﻿# Exclusive Content - Content Plugin for Joomla
 
 This plugin allows you to restrict specific parts of your articles, or entire articles, strictly to logged-in users or specific VIP user groups. 
 
